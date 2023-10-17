@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AnnounceType{% endblock %}
+
+{% block body %}
+    <h1>Create new AnnounceType</h1>
+
+    {{ include('announce_type/_form.html.twig') }}
+
+    <a href="{{ path('app_announce_type_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AnnounceType index{% endblock %}
+
+{% block body %}
+    <h1>AnnounceType index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for announce_type in announce_types %}
+            <tr>
+                <td>{{ announce_type.id }}</td>
+                <td>{{ announce_type.name }}</td>
+                <td>
+                    <a href="{{ path('app_announce_type_show', {'id': announce_type.id}) }}">show</a>
+                    <a href="{{ path('app_announce_type_edit', {'id': announce_type.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_announce_type_new') }}">Create new</a>
+{% endblock %}
